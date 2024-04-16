@@ -2,9 +2,7 @@ package br.com.rayan.backend.picpaysimplificado.domain.transaction;
 
 import br.com.rayan.backend.picpaysimplificado.domain.user.User;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -13,6 +11,8 @@ import java.time.LocalDateTime;
 @Table(name="TB_TRANSACTIONS")
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of="transactionId")
 public class Transaction {
 
