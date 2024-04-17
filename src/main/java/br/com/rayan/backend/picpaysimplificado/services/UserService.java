@@ -2,10 +2,13 @@ package br.com.rayan.backend.picpaysimplificado.services;
 
 import br.com.rayan.backend.picpaysimplificado.domain.user.User;
 import br.com.rayan.backend.picpaysimplificado.domain.user.UserType;
+import br.com.rayan.backend.picpaysimplificado.dtos.UserDTO;
 import br.com.rayan.backend.picpaysimplificado.repositories.UserRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class UserService {
@@ -27,5 +30,15 @@ public class UserService {
 
     public void saveUser(User newUser) {
         this.userRepository.save(newUser);
+    }
+
+    public User createUser(UserDTO userDTO) {
+        User newUser = new User(userDTO);
+        this.saveUser(newUser);
+        return newUser;
+    }
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

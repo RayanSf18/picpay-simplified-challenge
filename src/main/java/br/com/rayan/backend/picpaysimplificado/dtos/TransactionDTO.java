@@ -1,4 +1,4 @@
-package br.com.rayan.backend.picpaysimplificado.domain.dtos;
+package br.com.rayan.backend.picpaysimplificado.dtos;
 
 import java.math.BigDecimal;
 

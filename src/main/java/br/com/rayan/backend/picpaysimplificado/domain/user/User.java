@@ -1,5 +1,6 @@
 package br.com.rayan.backend.picpaysimplificado.domain.user;
 
+import br.com.rayan.backend.picpaysimplificado.dtos.UserDTO;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -39,4 +40,14 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private UserType type;
+
+    public User(UserDTO userDTO) {
+        this.firstName = userDTO.firstName();
+        this.lastName = userDTO.lastName();
+        this.document = userDTO.document();
+        this.email = userDTO.email();
+        this.password = userDTO.password();
+        this.balance = userDTO.balance();
+        this.type = userDTO.type();
+    }
 }
